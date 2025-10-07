@@ -5,3 +5,19 @@
 body {
   font-family: "Manrope", sans-serif;
 }
+.slider-button {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(174, 86%, 45%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: box-shadow 0.3s ease-in-out;
+  box-shadow: 0 15px 30px 5px rgba(16, 213, 194, 0.4),
+    0 25px 60px 10px rgba(16, 213, 194, 0.2);
+}

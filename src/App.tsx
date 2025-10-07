@@ -1,10 +1,11 @@
 import pattern from "../images/bg-pattern.svg";
 import circles from "../images/pattern-circles.svg";
+import Card from "./components/Card";
 
 function App() {
   return (
     <>
-      <div className="w-full z-10">
+      <div className="w-full z-10 pb-10">
         <div className="absolute z-[-10] top-0 h-[45vh] md:h-auto w-full">
           <img src={pattern} className="w-full h-full block" />
         </div>
@@ -13,13 +14,18 @@ function App() {
         </div>
         {/*Title*/}
         <div className="z-10 mt-20 flex flex-col items-center text-center">
-          <h1 className="text-blue-custom-dark text-xl font-extrabold mb-2">
+          <h1 className="text-blue-custom-dark text-xl md:text-2xl font-extrabold mb-2">
             Simple, traffic-based pricing
           </h1>
-          <div className="flex flex-col space-y-1 text-blue-custom-graysh font-medium">
+          <div className="flex flex-col space-y-1 md:flex-row md:items-center md:space-y-0 md:text-base text-blue-custom-graysh font-medium">
             <small>Sign-up for our 30-day trial.</small>
             <small>No credit card required.</small>
           </div>
+        </div>
+
+        {/*Card*/}
+        <div className="">
+          <Card />
         </div>
       </div>
     </>
