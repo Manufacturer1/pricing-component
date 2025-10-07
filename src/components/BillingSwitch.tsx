@@ -5,7 +5,7 @@ const BillingSwitch = () => {
   const [checked, setChecked] = useState(false);
 
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex items-center gap-3 md:gap-5">
       <span
         className={`text-sm text-blue-custom-graysh font-semibold text-start`}
       >
@@ -25,7 +25,9 @@ const BillingSwitch = () => {
       >
         Yearly Billing
         <div className="text-xs bg-gray-custom-light py-1 px-2 rounded-full">
-          <span className="text-xs text-red-custom-light">-25%</span>
+          <span className="text-xs text-red-custom-light">
+            -25% <span className="hidden md:inline">discount</span>
+          </span>
         </div>
       </span>
     </div>
