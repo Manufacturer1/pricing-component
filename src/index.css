@@ -5,3 +5,25 @@
 body {
   font-family: "Manrope", sans-serif;
 }
+.slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  background: hsl(174, 86%, 45%);
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 15px 30px hsla(174, 86%, 45%, 0.6);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+input[type="range"]:hover ~ .slider-button {
+  background-color: hsl(174, 83%, 52%);
+}
+
+input[type="range"]:active ~ .slider-button {
+  background-color: hsl(174, 76%, 36%);
+}
