@@ -2,22 +2,25 @@ import { checkItems } from "../data/checkList";
 import BillingSwitch from "./BillingSwitch";
 import Slider from "./Slider";
 import checkIcon from "../../images/icon-check.svg";
+import { usePricing } from "../context/PricingContext";
 
 const Card = (): React.ReactNode => {
+  const { currentPricing } = usePricing();
+
   return (
     <div className="bg-white md:max-w-[500px] z-10 top-[50vh] mx-auto md:mt-[100px] mt-[70px] w-[90%] shadow-md rounded-md">
       {/* Content section */}
       <div className="p-7">
         <div className="flex flex-col md:flex-row md:justify-between items-center text-center">
           <h3 className="text-blue-custom-graysh text-sm font-bold tracking-widest uppercase mb-5">
-            100k pageviews
+            {currentPricing.pageViews} pageviews
           </h3>
           <div className="w-full mb-4 md:hidden">
             <Slider />
           </div>
           <div className="flex items-center text-center gap-2 mb-8">
             <h1 className="text-blue-custom-dark text-4xl font-extrabold">
-              $16.00
+              ${currentPricing.finalPrice.toFixed(2)}
             </h1>
             <small className="text-blue-custom-graysh font-semibold text-base">
               / month
@@ -46,7 +49,8 @@ const Card = (): React.ReactNode => {
         </ul>
         <button
           className="bg-blue-custom-dark text-blue-custom-pale 
-        font-bold text-sm py-3 px-11 rounded-full"
+        font-bold text-sm py-3 px-11 rounded-full hover:text-blue-custom-veryPale
+        transition-colors duration-200"
         >
           Start my trial
         </button>

@@ -1,10 +1,11 @@
 import pattern from "../images/bg-pattern.svg";
 import circles from "../images/pattern-circles.svg";
 import Card from "./components/Card";
+import { PricingProvider } from "./context/PricingContext";
 
 function App() {
   return (
-    <>
+    <PricingProvider>
       <div className="w-full z-10">
         <div className="absolute z-[-10] top-0 h-[45vh] md:h-auto w-full">
           <img src={pattern} className="w-full h-full block" />
@@ -28,7 +29,7 @@ function App() {
           <Card />
         </div>
       </div>
-    </>
+    </PricingProvider>
   );
 }
 

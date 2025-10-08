@@ -1,8 +1,8 @@
 import Switch from "react-switch";
-import { useState } from "react";
+import { usePricing } from "../context/PricingContext";
 
 const BillingSwitch = () => {
-  const [checked, setChecked] = useState(false);
+  const { state, toggleBilling } = usePricing();
 
   return (
     <div className="flex items-center gap-3 md:gap-5">
@@ -12,12 +12,12 @@ const BillingSwitch = () => {
         Monthly Billing
       </span>
       <Switch
-        onChange={setChecked}
+        onChange={toggleBilling}
         onColor="#10d5c2"
         offColor="#dbe0f0"
         uncheckedIcon={false}
         checkedIcon={false}
-        checked={checked}
+        checked={state.isYearly}
         width={50}
       />
       <span
